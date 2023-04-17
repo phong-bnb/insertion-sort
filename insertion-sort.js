@@ -1,9 +1,12 @@
 function insertionSort(array) {
-    for (var i = 0; i < array.length; i++) {
-        if (array[i] < array[i - 1] && array[i - 1] > 0) {
-            array[i - 1] = array[i];
-            i = i + 1;
+    for (var i = 1; i < array.length; i++) {
+        var open_1 = array[i];
+        var j = i - 1;
+        if (open_1 < array[j] && (j > -1)) {
+            array[j + 1] = array[j];
+            j--;
         }
+        array[j + 1] = open_1;
     }
     return array;
 }
